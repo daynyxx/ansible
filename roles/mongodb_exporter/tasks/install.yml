@@ -35,6 +35,7 @@
       retries: 5
       delay: 2
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack mongodb_exporter binary
@@ -44,6 +45,7 @@
         dest: "{{ mongodb_exporter_archive_path }}"
         creates: "{{ mongodb_exporter_archive_path }}/mongodb_exporter-{{ mongodb_exporter_version }}.linux-{{ go_arch }}/mongodb_exporter"
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate mongodb_exporter binaries

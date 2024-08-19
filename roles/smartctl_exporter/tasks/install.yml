@@ -35,6 +35,7 @@
       retries: 5
       delay: 2
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack smartctl_exporter binary
@@ -44,6 +45,7 @@
         dest: "{{ smartctl_exporter_archive_path }}"
         creates: "{{ smartctl_exporter_archive_path }}/smartctl_exporter-{{ smartctl_exporter_version }}.linux-{{ go_arch }}/smartctl_exporter"
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate smartctl_exporter binaries

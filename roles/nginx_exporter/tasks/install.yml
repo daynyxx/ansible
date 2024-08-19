@@ -35,6 +35,7 @@
       retries: 5
       delay: 2
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack nginx_exporter binary
@@ -44,6 +45,7 @@
         dest: "{{ nginx_exporter_archive_path }}"
         creates: "{{ nginx_exporter_archive_path }}/nginx-prometheus-exporter"
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate nginx_exporter binaries

@@ -34,6 +34,7 @@
       retries: 5
       delay: 2
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack systemd_exporter binary
@@ -43,6 +44,7 @@
         dest: "{{ systemd_exporter_archive_path }}"
         creates: "{{ systemd_exporter_archive_path }}/systemd_exporter-{{ systemd_exporter_version }}.linux-{{ go_arch }}/systemd_exporter"
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate systemd_exporter binaries

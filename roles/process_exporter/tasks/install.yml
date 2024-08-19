@@ -35,6 +35,7 @@
       retries: 5
       delay: 2
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack process_exporter binary
@@ -44,6 +45,7 @@
         dest: "{{ process_exporter_archive_path }}"
         creates: "{{ process_exporter_archive_path }}/process-exporter-{{ process_exporter_version }}.linux-{{ go_arch }}/process-exporter"
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate process_exporter binaries

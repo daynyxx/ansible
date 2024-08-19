@@ -54,6 +54,7 @@
       delay: 2
       # run_once: true # <-- this cannot be set due to multi-arch support
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack prometheus binaries
@@ -63,6 +64,7 @@
         dest: "{{ prometheus_archive_path }}"
         creates: "{{ prometheus_archive_path }}/prometheus-{{ prometheus_version }}.linux-{{ go_arch }}/prometheus"
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate official prometheus and promtool binaries

@@ -35,6 +35,7 @@
       retries: 5
       delay: 2
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Unpack mysqld_exporter binary
@@ -46,6 +47,7 @@
         extra_opts:
           - --no-same-owner
       delegate_to: localhost
+      connection: local
       check_mode: false
 
     - name: Propagate mysqld_exporter binaries
